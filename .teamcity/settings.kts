@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 /*
@@ -40,7 +41,7 @@ object Build : BuildType({
     id("Build")
     steps {
         script {
-            namfe = "Set version using script"
+            name = "Set version using script"
             scriptContent = """
       #!/bin/bash
       HASH=%build.vcs.number%
